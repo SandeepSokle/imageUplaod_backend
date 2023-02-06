@@ -9,7 +9,6 @@ const getImages = async (req, res, next) => {
 };
 const uploadImage = async (req, res, next) => {
   const data = req.body;
-  console.log(data);
   try {
     let image = await imageModel.create(data);
     res.status(200).send({ msg: "upload successfully", image });

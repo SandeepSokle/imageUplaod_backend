@@ -11,7 +11,6 @@ const getUsers = async (req, res, next) => {
 
 const signup = async (req, res, next) => {
   const data = req.body;
-  console.log(data);
   try {
     let user = await userModel.create(data);
     res.status(200).send({ msg: "Sign up successfully", user });
@@ -22,7 +21,6 @@ const signup = async (req, res, next) => {
 
 const login = async (req, res, next) => {
   const data = req.body;
-  console.log(data);
   try {
     let user = await userModel.findOne({ email: data.email });
     if (user) {
